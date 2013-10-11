@@ -1,0 +1,403 @@
+/*!
+ * Theme Name: Cycnus
+ * Theme URI:
+ * Description: A swantastic child theme for the Socially Awkward theme.
+ * Author: Jesper Johansen
+ * Author URI: http://jayj.dk
+ * Version: 1.0
+ * Template: socially-awkward
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+/**
+ * Libre Baskerville font
+ * --------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.comment-author cite,
+.format-chat cite,
+dt {
+  font-family: 'Libre Baskerville', 'Baskerville', 'Lora', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/**
+ * Defaults
+ * --------------------------------------------------------------------------- */
+/* === Layout === */
+body {
+  background: white;
+  padding-top: 0;
+}
+
+/* === Reset opacities to 1 === */
+#respond input[type="text"],
+#respond input[type="email"],
+#respond input[type="url"],
+#respond input[type="submit"],
+#respond input[type="submit"]:focus,
+#respond input[type="submit"]:hover,
+#respond textarea,
+#main a:hover, a:hover,
+.comment-content pre, pre,
+.comment-content th, .comment-content td,
+th, td,
+.wp-caption-text {
+  opacity: 1;
+}
+
+/* === Links === */
+#main a {
+  color: #1c5e8a;
+  transition-duration: 180ms;
+}
+
+#main a:hover,
+a:hover {
+  color: #c0392b;
+  transition-duration: 180ms;
+}
+
+/* === Code and Preformatted text === */
+code {
+  background: none;
+  color: #009933;
+  font-size: 1.2rem;
+}
+
+pre,
+.comment-content pre {
+  background: #202020;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* === Tables === */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  color: #656565;
+}
+
+th {
+  background: white;
+  border: 1px solid #dddddd;
+}
+thead th {
+  background: #fff7e9;
+  border: 1px solid #d5d5d5;
+}
+
+td {
+  background: none;
+  border: 1px solid #dddddd;
+}
+
+tfoot th,
+tfoot td {
+  background: white;
+  box-shadow: inset 0 1px 1px 0 papayawhip;
+  color: #ef9400;
+  font-size: 1.1rem;
+}
+
+/**
+ * Images
+ * --------------------------------------------------------------------------- */
+img {
+  background: #f2f2f2;
+}
+
+/* === Captions === */
+.wp-caption {
+  background: #202020;
+  padding: 10px;
+}
+.wp-caption img {
+  padding: 0;
+}
+
+.wp-caption-text {
+  max-width: 100%;
+  position: static;
+  font-size: 1rem;
+  color: #fff;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+ * Layout
+ * --------------------------------------------------------------------------- */
+#container {
+  background: white;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+/**
+ * Header
+ * --------------------------------------------------------------------------- */
+#site-description {
+  color: #858585;
+  margin-top: 0.75rem;
+}
+
+/**
+ * Main
+ * --------------------------------------------------------------------------- */
+.hentry,
+.attachment-meta,
+.loop-meta,
+#comments-template {
+  background: #fff;
+  color: #222;
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+.hentry:last-of-type,
+.attachment-meta:last-of-type,
+.loop-meta:last-of-type,
+#comments-template:last-of-type {
+  border-bottom: 5px solid #c0392b;
+  margin-bottom: 50px;
+}
+
+.singular .hentry + #comments-template,
+.singular-attachment .hentry + .attachment-meta {
+  border-top: 0;
+  margin-top: -50px;
+}
+
+.loop-meta {
+  background: #ecf0f1;
+}
+
+/**
+ * Content
+ * --------------------------------------------------------------------------- */
+/* ====== Posts ====== */
+.sticky {
+  background: #ecf0f1;
+}
+.sticky::before {
+  color: #cfd9db;
+  opacity: 1;
+}
+
+/* Make the caption full width */
+.hentry > .wp-caption {
+  max-width: 100% !important;
+}
+.hentry > .wp-caption .wp-caption-text {
+  text-align: center;
+}
+
+/* === Post Meta === */
+.entry-byline,
+.entry-meta {
+  color: #656565;
+}
+
+/* === Status updates === */
+.format-status .avatar {
+  box-shadow: 0 0 0 10px #f2f2f2;
+}
+
+/* === Chats === */
+.format-chat .chat-speaker-2 .chat-author,
+.format-chat .chat-speaker-12 .chat-author {
+  color: #e74c3c;
+}
+
+.format-chat .chat-speaker-3 .chat-author,
+.format-chat .chat-speaker-13 .chat-author {
+  color: #f1c40f;
+}
+
+/* === Post-related icons === */
+.entry-byline .permalink::before,
+.entry-meta .permalink::before,
+.comment-meta .permalink::before,
+.portfolio-item-link::before,
+.comments-link::before,
+.entry-byline .category::before,
+.entry-meta .category::before,
+.entry-byline .portfolio::before,
+.entry-meta .portfolio::before,
+.entry-byline .post_tag::before,
+.entry-meta .post_tag::before,
+.post-edit-link::before,
+.comment-edit-link::before,
+.entry-byline .author a::before,
+.entry-meta .author a::before,
+.published::before,
+.post-format-link::before {
+  color: #858585;
+}
+
+/* ====== Formats Menu ====== */
+.page-template-formats #menu-formats {
+  background: #ecf0f1;
+  border-top: 5px solid #000;
+  border-bottom: 5px solid #c0392b;
+  padding-top: 50px;
+}
+.page-template-formats #menu-formats li a::before {
+  transition-duration: 200ms;
+}
+.page-template-formats #menu-formats li a:hover::after {
+  color: #4c4c4c;
+}
+
+#menu-formats li a:hover::before {
+  opacity: 0.7;
+  transition-duration: 300ms;
+}
+
+/* ====== Audio/Video shortcode toggle ====== */
+.media-shortcode-extend .audio-info,
+.media-shortcode-extend .video-info {
+  background: #202020;
+  color: #ccc;
+}
+#main .media-shortcode-extend .audio-info a, #main
+.media-shortcode-extend .video-info a {
+  color: #257bb4;
+}
+#main .media-shortcode-extend .audio-info a:hover, #main
+.media-shortcode-extend .video-info a:hover {
+  color: #d24637;
+}
+
+#main .media-info-toggle {
+  color: #fff;
+}
+#main .media-info-toggle:hover {
+  color: #ccc;
+}
+
+/* ====== Pagination ====== */
+#main .page-links a,
+#main .loop-nav a,
+#main .comments-nav a,
+#comments-template .comment-reply-link {
+  color: #fff;
+}
+#main .page-links a:hover,
+#main .loop-nav a:hover,
+#main .comments-nav a:hover,
+#comments-template .comment-reply-link:hover {
+  background: #000;
+  color: #eee;
+}
+
+.page-links a {
+  border-radius: 50%;
+}
+
+.comments-nav .page-numbers {
+  margin: 0 10px;
+}
+
+/* Bug fix: Remove double arrows */
+.comments-nav a[rel="prev"]::before,
+.comments-nav a[rel="next"]::after {
+  content: "";
+}
+
+/**
+ * Comments Template
+ * --------------------------------------------------------------------------- */
+/* === Comment text/content === */
+.comment-content {
+  background: #f9f9f9;
+}
+
+/* === Avatars === */
+.comment-list .avatar {
+  box-shadow: 0 0 0 10px #f2f2f2;
+}
+
+/* === Post author comment === */
+.comment-list .bypostauthor .comment-content {
+  background: #e7f3f6;
+}
+.comment-list .bypostauthor .avatar {
+  box-shadow: 0 0 0 10px #2980b9;
+}
+
+/* === Meta === */
+.comment-meta {
+  color: #656565;
+}
+
+/* ====== RESPOND (COMMENT FORM) ====== */
+#respond input[type="text"],
+#respond input[type="email"],
+#respond input[type="url"],
+#respond textarea {
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+#respond input[type="submit"] {
+  transition-duration: 180ms;
+}
+
+#respond input[type="submit"]:focus,
+#respond input[type="submit"]:hover {
+  background: #2980b9;
+  color: #f5f5f5;
+  transition-duration: 180ms;
+}
+
+/* === Comment-related icons === */
+#respond .log-in-out::before,
+#respond label[for="author"]::before,
+#respond label[for="email"]::before,
+#respond label[for="url"]::before,
+#respond label[for="comment"]::before {
+  color: #858585;
+}
+
+/**
+ * Footer
+ * --------------------------------------------------------------------------- */
+#footer {
+  margin-top: 0;
+}
+#footer .credit {
+  font-size: 1rem;
+}
+
+/**
+ * Media Queries
+ * --------------------------------------------------------------------------- */
+/* === MIN-WIDTH 800PX === */
+@media only screen and (min-width: 800px) {
+  /* ====== Primary Menu ====== */
+  #menu-primary .menu-item a {
+    color: #656565;
+  }
+  #menu-primary .sub-menu .menu-item a {
+    color: #fff;
+    opacity: 1;
+  }
+  #menu-primary .sub-menu .menu-item a:hover {
+    background: #000;
+  }
+}
+/* === 800px breakpoint === */
+@media only screen and (max-width: 800px) {
+  #menu-primary .menu-item a {
+    text-transform: none;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
