@@ -142,7 +142,7 @@ img {
 /* === Captions === */
 
 .wp-caption {
-	background: #202020;
+	background: $image-border-color;
 	padding: 10px;
 
 	img {
@@ -154,7 +154,8 @@ img {
 	max-width: 100%;
 	position: static;
 	font-size: 1rem;
-	color: #fff;
+	background: none;
+	color: #222;
 
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -230,6 +231,7 @@ img {
 /* Make the caption full width */
 .hentry > .wp-caption {
 	max-width: 100% !important;
+	margin-top: -50px;
 
 	.wp-caption-text {
 		text-align: center;
