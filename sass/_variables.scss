@@ -1,0 +1,91 @@
+//
+// Variables
+// ---------------------------------------------------------------------------
+
+// Grays
+// -------------------------
+
+$gray-darker:            lighten( #000, 12.5% ); // #222
+$gray-dark:              lighten( #000, 39.5% ); // #656565
+$gray:                   lighten( #000, 52.0% ); // #858585
+$gray-light:             lighten( #000, 80.0% ); // #ccc
+$gray-lighter:           lighten( #000, 95.0% ); // #f2f2f2
+
+// Other colours
+// -------------------------
+
+$red:                    #c0392b;
+$green:                  #009933;
+$blue:                   #2980b9;
+$blue-dark:              #1c5e8a;
+
+// Text
+// -------------------------
+
+$text-color:             $gray-darker;
+$text-color-secondary:   $gray-dark;
+$icon-color-secondary:   $gray;
+
+$link-color:             $blue-dark;
+$link-color-hover:       $red;
+
+
+// Backgrounds
+// -------------------------
+
+$background-color:       #fff;
+$content-bg-color:       #fff;
+$content-highlight:      #ecf0f1;
+
+// Main
+// -------------------------
+
+$main-border-top:        5px solid $gray-darker;
+$main-border-bottom:     5px solid $red;
+
+$main-gutter-width:      50px;
+
+// Comments
+// -------------------------
+
+$comment-bg:             lighten(#000, 97.5%); //  #f9f9f9
+
+$comment-bg-author:      saturate( $content-highlight, 30 );
+$comment-avatar-author:  $blue;
+
+// Forms
+// -------------------------
+
+$input-bg:               $gray-lighter;
+$input-text-color:       $gray-darker;
+
+$input-submit-hover:     $blue;
+$input-submit-txt-hover: $gray-lighter;
+
+// Tables
+// -------------------------
+
+$table-color:            papayawhip;
+$table-border-color:     lighten(#000, 86.5%); // #ddd
+
+// Images
+// -------------------------
+
+$image-border-color:     $gray-lighter;
+
+$image-caption-text:     $gray-darker;
+
+
+// Code
+// -------------------------
+
+$code-color:             $green;
+
+$pre-bg-color:           $gray-darker;
+$pre-text-color:         #fff;
+
+
+// Misc
+// -------------------------
+
+$transition-duration:    180ms;

@@ -70,7 +70,7 @@ pre,
   background: #202020;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: white;
 }
 
 /* === Tables === */
@@ -126,7 +126,7 @@ img {
   position: static;
   font-size: 1rem;
   background: none;
-  color: #222;
+  color: #202020;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -154,16 +154,15 @@ img {
  * --------------------------------------------------------------------------- */
 .hentry,
 .attachment-meta,
-.loop-meta,
 #comments-template {
-  background: #fff;
-  color: #222;
+  background: white;
+  border-top: 5px solid #202020;
+  color: #202020;
   border-bottom: 0;
   margin-bottom: 0;
 }
 .hentry:last-of-type,
 .attachment-meta:last-of-type,
-.loop-meta:last-of-type,
 #comments-template:last-of-type {
   border-bottom: 5px solid #c0392b;
   margin-bottom: 50px;
@@ -177,6 +176,7 @@ img {
 
 .loop-meta {
   background: #ecf0f1;
+  color: #202020;
 }
 
 /**
@@ -194,7 +194,6 @@ img {
 /* Make the caption full width */
 .hentry > .wp-caption {
   max-width: 100% !important;
-  margin-top: -50px;
 }
 .hentry > .wp-caption .wp-caption-text {
   text-align: center;
@@ -223,21 +222,20 @@ img {
 }
 
 /* === Post-related icons === */
-.entry-byline .permalink::before,
+.entry-byline .permalink::before, .entry-byline .category::before, .entry-byline .portfolio::before, .entry-byline .post_tag::before, .entry-byline .author a::before,
 .entry-meta .permalink::before,
-.comment-meta .permalink::before,
+.entry-meta .category::before,
+.entry-meta .portfolio::before,
+.entry-meta .post_tag::before,
+.entry-meta .author a::before {
+  color: #858585;
+}
+
 .portfolio-item-link::before,
 .comments-link::before,
-.entry-byline .category::before,
-.entry-meta .category::before,
-.entry-byline .portfolio::before,
-.entry-meta .portfolio::before,
-.entry-byline .post_tag::before,
-.entry-meta .post_tag::before,
+.comment-meta .permalink::before,
 .post-edit-link::before,
 .comment-edit-link::before,
-.entry-byline .author a::before,
-.entry-meta .author a::before,
 .published::before,
 .post-format-link::before {
   color: #858585;
@@ -246,7 +244,7 @@ img {
 /* ====== Formats Menu ====== */
 .page-template-formats #menu-formats {
   background: #ecf0f1;
-  border-top: 5px solid #000;
+  border-top: 5px solid #202020;
   border-bottom: 5px solid #c0392b;
   padding-top: 50px;
 }
@@ -254,7 +252,7 @@ img {
   transition-duration: 200ms;
 }
 .page-template-formats #menu-formats li a:hover::after {
-  color: #4c4c4c;
+  color: #4b4b4b;
 }
 
 #menu-formats li a:hover::before {
@@ -266,7 +264,7 @@ img {
 .media-shortcode-extend .audio-info,
 .media-shortcode-extend .video-info {
   background: #202020;
-  color: #ccc;
+  color: #cccccc;
 }
 #main .media-shortcode-extend .audio-info a, #main
 .media-shortcode-extend .video-info a {
@@ -281,22 +279,24 @@ img {
   color: #fff;
 }
 #main .media-info-toggle:hover {
-  color: #ccc;
+  color: #cccccc;
 }
 
 /* ====== Pagination ====== */
 #main .page-links a,
 #main .loop-nav a,
 #main .comments-nav a,
-#comments-template .comment-reply-link {
+#comments-template .comment-reply-link,
+#menu-portfolio li a {
   color: #fff;
 }
 #main .page-links a:hover,
 #main .loop-nav a:hover,
 #main .comments-nav a:hover,
-#comments-template .comment-reply-link:hover {
+#comments-template .comment-reply-link:hover,
+#menu-portfolio li a:hover {
   background: #000;
-  color: #eee;
+  color: #cccccc;
 }
 
 .page-links a {
@@ -345,17 +345,15 @@ img {
 #respond input[type="url"],
 #respond textarea {
   background-color: #f2f2f2;
-  color: #222;
+  color: #202020;
 }
 
 #respond input[type="submit"] {
   transition-duration: 180ms;
 }
-
-#respond input[type="submit"]:focus,
-#respond input[type="submit"]:hover {
+#respond input[type="submit"]:focus, #respond input[type="submit"]:hover {
   background: #2980b9;
-  color: #f5f5f5;
+  color: #f2f2f2;
   transition-duration: 180ms;
 }
 
@@ -368,6 +366,9 @@ img {
   color: #858585;
 }
 
+/**
+ * Portfolio
+ * --------------------------------------------------------------------------- */
 /**
  * Footer
  * --------------------------------------------------------------------------- */

@@ -10,20 +10,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-$background-color:     #fff;
-$content-bg-color:     #fff;
-$content-highlight:    #ecf0f1;
-
-$text-color-secondary: #656565;
-$icon-color-secondary: #858585;
-
-$link-color:           #1c5e8a;
-$link-color-hover:     #c0392b;
-
-$table-color:          papayawhip;
-$table-border:         #ddd;
-
-$image-border-color:   #f2f2f2;
+@import 'sass/variables';
 
 /**
  * Libre Baskerville font
@@ -72,29 +59,29 @@ th, td,
 
 #main a {
 	color: $link-color;
-	transition-duration: 180ms;
+	transition-duration: $transition-duration;
 }
 
 #main a:hover,
 a:hover {
 	color: $link-color-hover;
-	transition-duration: 180ms;
+	transition-duration: $transition-duration;
 }
 
 /* === Code and Preformatted text === */
 
 code {
 	background: none;
-	color: #009933;
+	color: $code-color;
 	font-size: 1.2rem; // or 1 or 1.25
 }
 
 pre,
 .comment-content pre {
-	background: #202020; // or #1a1a1a
+	background: $pre-bg-color;
 	border: none;
 	border-radius: 5px;
-	color: #fff;
+	color: $pre-text-color;
 }
 
 /* === Tables === */
@@ -110,17 +97,17 @@ caption {
 
 th {
 	background: lighten( $table-color, 10% );
-	border: 1px solid $table-border;
+	border: 1px solid $table-border-color;
 
 	thead & {
 		background: lighten( $table-color, 4% );
-		border: 1px solid darken( $table-border, 3% );
+		border: 1px solid darken( $table-border-color, 3% );
 	}
 }
 
 td {
 	background: none;
-	border: 1px solid $table-border;
+	border: 1px solid $table-border-color;
 }
 
 tfoot th,
@@ -155,7 +142,7 @@ img {
 	position: static;
 	font-size: 1rem;
 	background: none;
-	color: #222;
+	color: $image-caption-text;
 
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -187,30 +174,29 @@ img {
 
 .hentry,
 .attachment-meta,
-.loop-meta,
 #comments-template {
-	background: #fff;
-	color: #222;
+	background: $content-bg-color;
+	border-top: $main-border-top;
+	color: $text-color;
 
-	//border-top: 5px solid #000;
-	//border-bottom: 5px solid #c0392b;
 	border-bottom: 0;
 	margin-bottom: 0;
 
 	&:last-of-type {
-		border-bottom: 5px solid #c0392b;
-		margin-bottom: 50px;
+		border-bottom: $main-border-bottom;
+		margin-bottom: $main-gutter-width;
 	}
 }
 
 .singular .hentry + #comments-template,
 .singular-attachment .hentry + .attachment-meta {
 	border-top: 0;
-	margin-top: -50px;
+	margin-top: ( -$main-gutter-width );
 }
 
 .loop-meta {
 	background: $content-highlight;
+	color: $text-color;
 }
 
 /**
@@ -284,36 +270,37 @@ img {
 
 /* === Post-related icons === */
 
-.entry-byline .permalink::before,
-.entry-meta .permalink::before,
-.comment-meta .permalink::before,
-.portfolio-item-link::before,
-.comments-link::before,
-.entry-byline .category::before,
-.entry-meta .category::before,
-.entry-byline .portfolio::before,
-.entry-meta .portfolio::before,
-.entry-byline .post_tag::before,
-.entry-meta .post_tag::before,
-.post-edit-link::before,
-.comment-edit-link::before,
-.entry-byline .author a::before,
-.entry-meta .author a::before,
-.published::before,
-.post-format-link::before {
-	color: $icon-color-secondary;
+.entry-byline,
+.entry-meta {
+	.permalink, .category, .portfolio, .post_tag, .author a {
+		&::before {
+			color: $icon-color-secondary;
+		}
+	}
+}
+
+.portfolio-item-link,
+.comments-link,
+.comment-meta .permalink,
+.post-edit-link,
+.comment-edit-link,
+.published,
+.post-format-link {
+	&::before {
+		color: $icon-color-secondary;
+	}
 }
 
 /* ====== Formats Menu ====== */
 
 .page-template-formats #menu-formats {
 	background: $content-highlight;
-	border-top: 5px solid #000;
-	border-bottom: 5px solid #c0392b;
-	padding-top: 50px;
+	border-top: $main-border-top;
+	border-bottom: $main-border-bottom;
+	padding-top: $main-gutter-width;
 
 	li a::before {
-		transition-duration: 200ms;
+		transition-duration: ( $transition-duration + 20ms );
 	}
 
 	li a:hover::after {
@@ -323,15 +310,15 @@ img {
 
 #menu-formats li a:hover::before {
 	opacity: 0.7;
-	transition-duration: 300ms;
+	transition-duration: ( $transition-duration + 120ms );
 }
 
 /* ====== Audio/Video shortcode toggle ====== */
 
 .media-shortcode-extend .audio-info,
 .media-shortcode-extend .video-info {
-	background: #202020;
-	color: #ccc;
+	background: $gray-darker;
+	color: $gray-light;
 
 	#main & a {
 		color: lighten( $link-color, 10% );
@@ -346,7 +333,7 @@ img {
 	color: #fff;
 
 	&:hover {
-		color: #ccc;
+		color: $gray-light;
 	}
 }
 
@@ -355,12 +342,13 @@ img {
 #main .page-links a,
 #main .loop-nav a,
 #main .comments-nav a,
-#comments-template .comment-reply-link {
+#comments-template .comment-reply-link,
+#menu-portfolio li a {
 	color: #fff;
 
 	&:hover {
 		background: #000;
-		color: #eee;
+		color: $gray-light;
 	}
 }
 
@@ -385,7 +373,7 @@ img {
 /* === Comment text/content === */
 
 .comment-content {
-	background: #f9f9f9;
+	background: $comment-bg;
 }
 
 /* === Avatars === */
@@ -398,11 +386,11 @@ img {
 
 .comment-list .bypostauthor {
 	.comment-content {
-		background: saturate( $content-highlight, 30 );
+		background: $comment-bg-author;
 	}
 
 	.avatar {
-		box-shadow: 0 0 0 10px #2980b9;
+		box-shadow: 0 0 0 10px $comment-avatar-author;
 	}
 }
 
@@ -414,34 +402,46 @@ img {
 
 /* ====== RESPOND (COMMENT FORM) ====== */
 
-#respond input[type="text"],
-#respond input[type="email"],
-#respond input[type="url"],
-#respond textarea {
-	background-color: $image-border-color;
-	color: #222;
+#respond {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	textarea {
+		background-color: $input-bg;
+		color: $input-text-color;
+	}
 }
 
 #respond input[type="submit"] {
-	transition-duration: 180ms;
-}
+	transition-duration: $transition-duration;
 
-#respond input[type="submit"]:focus,
-#respond input[type="submit"]:hover {
-	background: #2980b9;
-	color: #f5f5f5;
-	transition-duration: 180ms;
+	&:focus,
+	&:hover {
+		background: $input-submit-hover;
+		color: $input-submit-txt-hover;
+		transition-duration: $transition-duration;
+	}
 }
 
 /* === Comment-related icons === */
 
-#respond .log-in-out::before,
-#respond label[for="author"]::before,
-#respond label[for="email"]::before,
-#respond label[for="url"]::before,
-#respond label[for="comment"]::before {
-	color: $icon-color-secondary;
+#respond {
+	.log-in-out,
+	label[for="author"],
+	label[for="email"],
+	label[for="url"],
+	label[for="comment"] {
+		&::before {
+			color: $icon-color-secondary;
+		}
+	}
 }
+
+/**
+ * Portfolio
+ * --------------------------------------------------------------------------- */
+
+
 
 /**
  * Footer
