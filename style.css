@@ -276,9 +276,11 @@ img {
 }
 
 #main .media-info-toggle {
+  background: #202020;
   color: #fff;
 }
 #main .media-info-toggle:hover {
+  background: #202020;
   color: #cccccc;
 }
 
@@ -288,6 +290,7 @@ img {
 #main .comments-nav a,
 #comments-template .comment-reply-link,
 #menu-portfolio li a {
+  background: #202020;
   color: #fff;
 }
 #main .page-links a:hover,
@@ -295,7 +298,7 @@ img {
 #main .comments-nav a:hover,
 #comments-template .comment-reply-link:hover,
 #menu-portfolio li a:hover {
-  background: #000;
+  background: black;
   color: #cccccc;
 }
 
@@ -361,9 +364,6 @@ img {
 }
 
 /**
- * Portfolio
- * --------------------------------------------------------------------------- */
-/**
  * Footer
  * --------------------------------------------------------------------------- */
 #footer {
@@ -383,11 +383,13 @@ img {
     color: #656565;
   }
   #menu-primary .sub-menu .menu-item a {
+    background: #202020;
     color: #fff;
     opacity: 1;
   }
   #menu-primary .sub-menu .menu-item a:hover {
-    background: #000;
+    background: black;
+    color: #cccccc;
   }
 }
 /* === 800px breakpoint === */

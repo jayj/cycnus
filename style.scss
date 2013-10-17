@@ -12,6 +12,16 @@
 
 @import 'sass/variables';
 
+@mixin button( $hover: #000 ) {
+	background: $gray-darker;
+	color: #fff;
+
+	&:hover {
+		background: $hover;
+		color: $gray-light;
+	}
+}
+
 /**
  * Libre Baskerville font
  * --------------------------------------------------------------------------- */
@@ -329,11 +339,7 @@ img {
 }
 
 #main .media-info-toggle {
-	color: #fff;
-
-	&:hover {
-		color: $gray-light;
-	}
+	@include button( $hover: $gray-darker );
 }
 
 /* ====== Pagination ====== */
@@ -343,12 +349,7 @@ img {
 #main .comments-nav a,
 #comments-template .comment-reply-link,
 #menu-portfolio li a {
-	color: #fff;
-
-	&:hover {
-		background: #000;
-		color: $gray-light;
-	}
+	@include button();
 }
 
 .page-links a {
@@ -431,12 +432,6 @@ img {
 }
 
 /**
- * Portfolio
- * --------------------------------------------------------------------------- */
-
-
-
-/**
  * Footer
  * --------------------------------------------------------------------------- */
 
@@ -464,12 +459,8 @@ img {
 		}
 
 		.sub-menu .menu-item a {
-			color: #fff;
+			@include button();
 			opacity: 1;
-
-			&:hover {
-				background: #000;
-			}
 		}
 	}
 
