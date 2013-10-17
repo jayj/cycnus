@@ -360,12 +360,6 @@ img {
 	margin: 0 10px;
 }
 
-/* Bug fix: Remove double arrows */
-.comments-nav a[rel="prev"]::before,
-.comments-nav a[rel="next"]::after {
-	content: "";
-}
-
 /**
  * Comments Template
  * --------------------------------------------------------------------------- */
