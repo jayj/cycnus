@@ -436,10 +436,13 @@ img {
  * --------------------------------------------------------------------------- */
 
  #footer {
- 	margin-top: 0;
+ 	.footer-content {
+ 		font-size: 1rem;
+ 		margin-bottom: 2em;
+ 	}
 
  	.credit {
- 		font-size: 1rem;
+ 		font-size: inherit;
  	}
  }
 
