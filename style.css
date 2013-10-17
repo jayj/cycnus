@@ -26,8 +26,8 @@ dt {
  * --------------------------------------------------------------------------- */
 /* === Layout === */
 body {
-  background: white;
   padding-top: 0;
+  background: white;
 }
 
 /* === Reset opacities to 1 === */
@@ -67,16 +67,16 @@ code {
 
 pre,
 .comment-content pre {
-  background: #202020;
   border: none;
   border-radius: 5px;
+  background: #202020;
   color: white;
 }
 
 /* === Tables === */
 table {
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
 }
 
 caption {
@@ -84,17 +84,17 @@ caption {
 }
 
 th {
-  background: white;
   border: 1px solid #dddddd;
+  background: white;
 }
 thead th {
-  background: #fff7e9;
   border: 1px solid #d5d5d5;
+  background: #fff7e9;
 }
 
 td {
-  background: none;
   border: 1px solid #dddddd;
+  background: none;
 }
 
 tfoot th,
@@ -114,39 +114,39 @@ img {
 
 /* === Captions === */
 .wp-caption {
-  background: #f2f2f2;
   padding: 10px;
+  background: #f2f2f2;
 }
 .wp-caption img {
   padding: 0;
 }
 
 .wp-caption-text {
-  max-width: 100%;
   position: static;
-  font-size: 1rem;
-  background: none;
-  color: #202020;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  max-width: 100%;
+  background: none;
+  color: #202020;
+  font-size: 1rem;
 }
 
 /**
  * Layout
  * --------------------------------------------------------------------------- */
 #container {
-  background: white;
-  max-width: 960px;
   margin: 0 auto;
   padding-top: 40px;
+  max-width: 960px;
+  background: white;
 }
 
 /**
  * Header
  * --------------------------------------------------------------------------- */
 #site-description {
-  color: #858585;
   margin-top: 0.75rem;
+  color: #858585;
 }
 
 /**
@@ -155,8 +155,8 @@ img {
 .hentry,
 .attachment-meta,
 #comments-template {
-  background: white;
   border-top: 5px solid #202020;
+  background: white;
   color: #202020;
   border-bottom: 0;
   margin-bottom: 0;
@@ -243,10 +243,10 @@ img {
 
 /* ====== Formats Menu ====== */
 .page-template-formats #menu-formats {
-  background: #ecf0f1;
+  padding-top: 50px;
   border-top: 5px solid #202020;
   border-bottom: 5px solid #c0392b;
-  padding-top: 50px;
+  background: #ecf0f1;
 }
 .page-template-formats #menu-formats li a::before {
   transition-duration: 200ms;
@@ -305,12 +305,6 @@ img {
 
 .comments-nav .page-numbers {
   margin: 0 10px;
-}
-
-/* Bug fix: Remove double arrows */
-.comments-nav a[rel="prev"]::before,
-.comments-nav a[rel="next"]::after {
-  content: "";
 }
 
 /**

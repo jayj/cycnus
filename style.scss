@@ -34,8 +34,8 @@ dt {
 /* === Layout === */
 
 body {
-	background: $background-color;
 	padding-top: 0;
+	background: $background-color;
 }
 
 /* === Reset opacities to 1 === */
@@ -78,17 +78,17 @@ code {
 
 pre,
 .comment-content pre {
-	background: $pre-bg-color;
 	border: none;
 	border-radius: 5px;
+	background: $pre-bg-color;
 	color: $pre-text-color;
 }
 
 /* === Tables === */
 
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
+	border-collapse: collapse;
 }
 
 caption {
@@ -96,18 +96,18 @@ caption {
 }
 
 th {
-	background: lighten( $table-color, 10% );
 	border: 1px solid $table-border-color;
+	background: lighten( $table-color, 10% );
 
 	thead & {
-		background: lighten( $table-color, 4% );
 		border: 1px solid darken( $table-border-color, 3% );
+		background: lighten( $table-color, 4% );
 	}
 }
 
 td {
-	background: none;
 	border: 1px solid $table-border-color;
+	background: none;
 }
 
 tfoot th,
@@ -129,8 +129,8 @@ img {
 /* === Captions === */
 
 .wp-caption {
-	background: $image-border-color;
 	padding: 10px;
+	background: $image-border-color;
 
 	img {
 		padding: 0;
@@ -138,14 +138,13 @@ img {
 }
 
 .wp-caption-text {
-	max-width: 100%;
 	position: static;
-	font-size: 1rem;
-	background: none;
-	color: $image-caption-text;
-
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	max-width: 100%;
+	background: none;
+	color: $image-caption-text;
+	font-size: 1rem;
 }
 
 /**
@@ -153,10 +152,10 @@ img {
  * --------------------------------------------------------------------------- */
 
 #container {
-	background: $content-bg-color;
-	max-width: 960px;
 	margin: 0 auto;
 	padding-top: 40px;
+	max-width: 960px;
+	background: $content-bg-color;
 }
 
 /**
@@ -164,8 +163,8 @@ img {
  * --------------------------------------------------------------------------- */
 
 #site-description {
-	color: $icon-color-secondary;
 	margin-top: 0.75rem;
+	color: $icon-color-secondary;
 }
 
 /**
@@ -175,8 +174,8 @@ img {
 .hentry,
 .attachment-meta,
 #comments-template {
-	background: $content-bg-color;
 	border-top: $main-border-top;
+	background: $content-bg-color;
 	color: $text-color;
 
 	border-bottom: 0;
@@ -294,10 +293,10 @@ img {
 /* ====== Formats Menu ====== */
 
 .page-template-formats #menu-formats {
-	background: $content-highlight;
+	padding-top: $main-gutter-width;
 	border-top: $main-border-top;
 	border-bottom: $main-border-bottom;
-	padding-top: $main-gutter-width;
+	background: $content-highlight;
 
 	li a::before {
 		transition-duration: ( $transition-duration + 20ms );
