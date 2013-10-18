@@ -22,6 +22,9 @@ function cycnus_child_theme_setup() {
 	/* Add theme support for custom backgrounds. */
 	add_theme_support( 'custom-background', array( 'default-color' => 'ffffff' ));
 
+	/* Add theme support for Loop Pagination. */
+	add_theme_support( 'loop-pagination' );
+
 	/* Register the Libre Baskerville font as a new heading font. */
 	add_action( 'theme_fonts_register', 'cycnus_register_font', 11 );
 
