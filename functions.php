@@ -31,6 +31,8 @@ function cycnus_child_theme_setup() {
 	/* Filter the footer content. */
 	add_filter( "{$prefix}_footer_content", 'cycnus_footer_content' );
 
+	/* Filter the body class */
+	add_filter( 'body_class', 'cycnus_body_class' );
 }
 
 function cycnus_footer_content( $content ) {
@@ -38,6 +40,24 @@ function cycnus_footer_content( $content ) {
 	$content = '<p class="credit">' . __( 'Copyright &copy; [the-year] [site-link].<br />Powered by [wp-link], [theme-link], and [child-link].', 'cycnus' );
 
 	return $content;
+}
+
+/**
+ * Extends the default WordPress body class to denote:
+ *   1. White or empty background color to change the layout and spacing.
+ *
+ * @since Cycnus 1.0.0
+ */
+function cycnus_body_class( $classes ) {
+        $background_color = get_background_color();
+
+        if ( empty( $background_color ) ) {
+                $classes[] = 'custom-background-empty';
+        } elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) ) {
+                $classes[] = 'custom-background-white';
+        }
+
+        return $classes;
 }
 
 
