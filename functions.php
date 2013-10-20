@@ -34,7 +34,8 @@ function cycnus_child_theme_setup() {
 	/* Filter the body class. */
 	add_filter( 'body_class', 'cycnus_body_class' );
 
-function cycnus_footer_content( $content ) {
+	/* Register JS needed for the Theme Customizer. */
+	add_action( 'customize_preview_init', 'cycnus_customizer_live_preview' );
 
 	/* Register the Libre Baskerville font as a new heading font. */
 	add_action( 'theme_fonts_register', 'cycnus_register_font', 11 );
@@ -68,6 +69,20 @@ function cycnus_body_class( $classes ) {
 	return $classes;
 }
 
+/**
+ * Registers JS needed for the Theme Customizer
+ *
+ * @since Cycnus 1.0.0
+ */
+function cycnus_customizer_live_preview() {
+
+	wp_enqueue_script(
+		'cycnus-theme-customizer',
+		CHILD_THEME_URI . '/js/customizer.js',
+        array( 'jquery', 'customize-preview' ),
+        '1.0.0',
+        true
+    );
 
 }
 
