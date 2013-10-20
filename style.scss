@@ -334,6 +334,22 @@ img {
 	transition-duration: ( $transition-duration + 120ms );
 }
 
+/* ====== Attachment Meta ====== */
+
+/* Bugfix: Prevent two line image meta (mostly long camera names). */
+.image-info {
+	.data {
+		overflow: hidden;
+		max-width: 60%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.prep {
+		max-width: 40%;
+	}
+}
+
 /* ====== Audio/Video shortcode toggle ====== */
 
 .media-shortcode-extend .audio-info,
