@@ -44,21 +44,20 @@ dt {
 /* === Layout === */
 
 body {
-	border-top-color: rgba( #000, 0.3);
-	border-bottom-color: rgba( #000, 0.4);
+	border-top-color: rgba( #000, 0.3 );
+	border-bottom-color: rgba( #000, 0.4 );
 	padding-top: 0;
 	background: $background-color;
 }
 
 // Add back the default Socially Awkward border colors
-// @todo Customizer JS update
 .custom-background-empty,
 .custom-background-white {
 	border-top-color: $red;
 	border-bottom-color: $blue;
 }
 
-/* === Reset opacities to 1 === */
+/* === Reset opacities to 100% === */
 
 #respond input[type="text"],
 #respond input[type="email"],
