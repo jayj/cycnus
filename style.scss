@@ -224,6 +224,14 @@ img {
 
 /* ====== Posts ====== */
 
+.hentry {
+	> .wp-caption,
+	> img,
+	> a img {
+		margin-top: -10px;
+	}
+}
+
 .sticky {
 	background: $content-highlight;
 
