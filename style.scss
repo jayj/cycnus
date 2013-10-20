@@ -293,6 +293,22 @@ img {
 
 // .format-chat .chat-speaker-10 .chat-author,
 // .format-chat .chat-speaker-20 .chat-author  { color: #1abc9c; }
+//
+
+/* === Portfolio === */
+
+.portfolio_item {
+	> .wp-caption,
+	> img,
+	> a img {
+		margin-top: -10px;
+	}
+
+	.archive-portfolio_item &:first-of-type {
+		border-top: 0;
+		padding-top: 0;
+	}
+}
 
 /* === Post-related icons === */
 
