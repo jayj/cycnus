@@ -1,11 +1,12 @@
 /*!
  * Theme Name: Cycnus
- * Theme URI:
- * Description: A swantastic child theme for the Socially Awkward theme.
+ * Theme URI: http://wpthemes.jayj.dk/cycnus
+ * Description: A light and bright child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds support for a custom background and a better post pagination.
+ * Version: 1.0
  * Author: Jesper Johansen
  * Author URI: http://jayj.dk
- * Version: 1.0
  * Template: socially-awkward
+ * Tags: light, white, blue, one-column, featured-images, microformats, post-formats, sticky-post, threaded-comments, custom-background, custom-menu
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -26,11 +27,19 @@ dt {
  * --------------------------------------------------------------------------- */
 /* === Layout === */
 body {
+  border-top-color: rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(0, 0, 0, 0.4);
   padding-top: 0;
   background: white;
 }
 
-/* === Reset opacities to 1 === */
+.custom-background-empty,
+.custom-background-white {
+  border-top-color: #c0392b;
+  border-bottom-color: #2980b9;
+}
+
+/* === Reset opacities to 100% === */
 #respond input[type="text"],
 #respond input[type="email"],
 #respond input[type="url"],
@@ -183,6 +192,12 @@ img {
  * Content
  * --------------------------------------------------------------------------- */
 /* ====== Posts ====== */
+.hentry > .wp-caption,
+.hentry > img,
+.hentry > a img {
+  margin-top: -10px;
+}
+
 .sticky {
   background: #ecf0f1;
 }
@@ -221,6 +236,17 @@ img {
   color: #f1c40f;
 }
 
+/* === Portfolio === */
+.portfolio_item > .wp-caption,
+.portfolio_item > img,
+.portfolio_item > a img {
+  margin-top: -10px;
+}
+.archive-portfolio_item .portfolio_item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
 /* === Post-related icons === */
 .entry-byline .permalink::before, .entry-byline .category::before, .entry-byline .portfolio::before, .entry-byline .post_tag::before, .entry-byline .author a::before,
 .entry-meta .permalink::before,
@@ -248,16 +274,44 @@ img {
   border-bottom: 5px solid #c0392b;
   background: #ecf0f1;
 }
+.page-template-formats #menu-formats li a {
+  margin-bottom: 75px;
+}
 .page-template-formats #menu-formats li a::before {
   transition-duration: 200ms;
 }
-.page-template-formats #menu-formats li a:hover::after {
+.page-template-formats #menu-formats li a::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -37px;
+  left: 0;
+  z-index: 999;
+  width: 120px;
   color: #4b4b4b;
+  white-space: nowrap;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.page-template-formats #menu-formats li a:hover::after {
+  color: #7e7e7e;
 }
 
 #menu-formats li a:hover::before {
   opacity: 0.7;
   transition-duration: 300ms;
+}
+
+/* ====== Attachment Meta ====== */
+/* Bugfix: Prevent two line image meta (mostly long camera names). */
+.image-info .data {
+  overflow: hidden;
+  max-width: 60%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.image-info .prep {
+  max-width: 40%;
 }
 
 /* ====== Audio/Video shortcode toggle ====== */
@@ -308,6 +362,32 @@ img {
 
 .comments-nav .page-numbers {
   margin: 0 10px;
+}
+
+/* === Loop Pagination === */
+#main .loop-pagination {
+  margin: -50px auto 50px;
+  max-width: 900px;
+  text-align: center;
+  font-size: 1.125rem;
+}
+#main .loop-pagination .page-numbers {
+  background: #202020;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #202020;
+  text-decoration: none;
+}
+#main .loop-pagination .page-numbers:hover {
+  background: black;
+  color: #cccccc;
+}
+#main .loop-pagination .current,
+#main .loop-pagination .current:hover {
+  border-color: #c0392b;
+  background: #c0392b;
+  color: #fff;
 }
 
 /**
@@ -366,6 +446,9 @@ img {
 /**
  * Footer
  * --------------------------------------------------------------------------- */
+#footer {
+  margin-top: 0;
+}
 #footer .footer-content {
   font-size: 1rem;
   margin-bottom: 2em;
