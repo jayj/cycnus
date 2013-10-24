@@ -320,12 +320,33 @@ img {
 	border-bottom: $main-border-bottom;
 	background: $content-highlight;
 
-	li a::before {
-		transition-duration: ( $transition-duration + 20ms );
-	}
+	li a {
+		margin-bottom: ( $main-gutter-width * 1.5 );
 
-	li a:hover::after {
-		color: darken( $text-color-secondary, 10% );
+		&::before {
+			transition-duration: ( $transition-duration + 20ms );
+		}
+
+		// Show the post format name all the time
+		&::after {
+			content: attr(title);
+			position: absolute;
+			bottom: -37px;
+			left: 0;
+			z-index: 999;
+			width: 120px;
+			color: darken( $text-color-secondary, 10% );
+			white-space: nowrap;
+			font: {
+				family: 'Open Sans', sans-serif;
+				weight: 400;
+				style: normal;
+			}
+		}
+
+		&:hover::after {
+			color: lighten( $text-color-secondary, 10% );
+		}
 	}
 }
 
