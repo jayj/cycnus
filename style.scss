@@ -315,7 +315,8 @@ img {
 
 /* ====== Formats Menu ====== */
 
-.page-template-formats #menu-formats {
+// Only applies when the template has page content
+.page-template-formats .hentry {
 	padding-top: $main-gutter-width;
 	border-top: $main-border-top;
 	border-bottom: $main-border-bottom;
