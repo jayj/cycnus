@@ -1,8 +1,8 @@
 /*!
  * Theme Name: Cycnus
  * Theme URI: http://wpthemes.jayj.dk/cycnus
- * Description: A light and bright child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds support for a custom background and a better post pagination.
- * Version: 1.0
+ * Description: A light and bright child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds the gorgeous Libre Baskerville font, support for a custom background, and a better post pagination.
+ * Version: 0.1
  * Author: Jesper Johansen
  * Author URI: http://jayj.dk
  * Template: socially-awkward
@@ -268,19 +268,19 @@ img {
 }
 
 /* ====== Formats Menu ====== */
-.page-template-formats #menu-formats {
+.page-template-formats .hentry {
   padding-top: 50px;
   border-top: 5px solid #202020;
   border-bottom: 5px solid #c0392b;
   background: #ecf0f1;
 }
-.page-template-formats #menu-formats li a {
+.page-template-formats .hentry li a {
   margin-bottom: 75px;
 }
-.page-template-formats #menu-formats li a::before {
+.page-template-formats .hentry li a::before {
   transition-duration: 200ms;
 }
-.page-template-formats #menu-formats li a::after {
+.page-template-formats .hentry li a::after {
   content: attr(title);
   position: absolute;
   bottom: -37px;
@@ -293,7 +293,7 @@ img {
   font-weight: 400;
   font-style: normal;
 }
-.page-template-formats #menu-formats li a:hover::after {
+.page-template-formats .hentry li a:hover::after {
   color: #7e7e7e;
 }
 
