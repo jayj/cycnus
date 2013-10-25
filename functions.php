@@ -66,10 +66,10 @@ function cycnus_customizer_live_preview() {
 	wp_enqueue_script(
 		'cycnus-theme-customizer',
 		CHILD_THEME_URI . '/js/customizer.js',
-        array( 'jquery', 'customize-preview' ),
-        '1.0.0',
-        true
-    );
+		array( 'jquery', 'customize-preview' ),
+		'1.0.0',
+		true
+	);
 
 }
 
