@@ -1,7 +1,11 @@
 module.exports = function(grunt) {
 
+	// Load all grunt tasks
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
 	// Project configuration.
 	grunt.initConfig({
+		pkg: grunt.file.readJSON( 'package.json' ),
 		// Compile Sass
 		sass: {
 			dist: {
@@ -10,6 +14,20 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'style.css': 'style.scss'
+				}
+			}
+		},
+		// Watch for file changes
+		watch: {
+			sass: {
+				files: [
+					'**/*.scss'
+				],
+				tasks: [
+					'sass'
+				],
+				options: {
+					debounceDelay: 500
 				}
 			}
 		},
@@ -48,15 +66,8 @@ module.exports = function(grunt) {
 		}
 	});
 
-	// Loads task
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-compress');
-
 	// Default task
-	grunt.registerTask('default', ['sass']);
+	grunt.registerTask('default', ['watch']);
 
 	// Build task
 	grunt.registerTask('build', [ 'clean:build', 'copy:build', 'cssmin', 'compress:build' ]);
