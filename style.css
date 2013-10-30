@@ -1,8 +1,8 @@
 /*!
  * Theme Name: Cycnus
- * Theme URI: http://wpthemes.jayj.dk/cycnus
- * Description: A light and bright child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds support for a custom background, and a better post pagination.
- * Version: 0.1
+ * Theme URI: http://jayj.dk/themes/cycnus
+ * Description: A light child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds support for a custom background, and a better post pagination.
+ * Version: 1.0.1
  * Author: Jesper Johansen
  * Author URI: http://jayj.dk
  * Template: socially-awkward
@@ -92,16 +92,19 @@ caption {
   color: #656565;
 }
 
-th {
+th,
+.comment-content th {
   border: 1px solid #dddddd;
   background: white;
 }
-thead th {
+thead th, thead
+.comment-content th {
   border: 1px solid #d5d5d5;
   background: #fff7e9;
 }
 
-td {
+td,
+.comment-content td {
   border: 1px solid #dddddd;
   background: none;
 }
@@ -396,6 +399,12 @@ img {
 /* === Comment text/content === */
 .comment-content {
   background: #f9f9f9;
+}
+
+/* === Pings === */
+li.ping {
+  background: #f9f9f9;
+  opacity: 0.5;
 }
 
 /* === Avatars === */
