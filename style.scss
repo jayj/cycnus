@@ -115,7 +115,8 @@ caption {
 	color: $text-color-secondary;
 }
 
-th {
+th,
+.comment-content th {
 	border: 1px solid $table-border-color;
 	background: lighten( $table-color, 10% );
 
@@ -125,7 +126,8 @@ th {
 	}
 }
 
-td {
+td,
+.comment-content td {
 	border: 1px solid $table-border-color;
 	background: none;
 }
