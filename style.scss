@@ -447,6 +447,13 @@ img {
 	background: $comment-bg;
 }
 
+/* === Pings === */
+
+li.ping {
+	background: $comment-bg;
+	opacity: 0.5;
+}
+
 /* === Avatars === */
 
 .comment-list .avatar {
