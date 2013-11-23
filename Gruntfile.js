@@ -53,6 +53,21 @@ module.exports = function(grunt) {
 				src: ['build/']
 			}
 		},
+		// Bump version numbers
+		version: {
+			css: {
+				options: {
+					prefix: 'Version\\:\\s'
+				},
+				src: [ 'style.scss' ],
+			},
+			php: {
+				options: {
+						prefix: '\@version\\s+'
+				},
+				src: [ 'functions.php' ],
+			}
+		},
 		// Compress the build folder into an upload-ready zip file
 		compress: {
 			build: {
@@ -67,9 +82,12 @@ module.exports = function(grunt) {
 	});
 
 	// Default task
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask( 'default', [ 'watch' ] );
+
+	// Pre-build task
+	grunt.registerTask( 'pre-build', [ 'version', 'sass' ]);
 
 	// Build task
-	grunt.registerTask('build', [ 'clean:build', 'copy:build', 'cssmin', 'compress:build' ]);
+	grunt.registerTask( 'build', [ 'clean:build', 'copy:build', 'cssmin:build', 'compress:build' ]);
 
 };

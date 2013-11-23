@@ -4,7 +4,7 @@
  *
  * @package    Cycnus
  * @subpackage Functions
- * @version    1.0.0
+ * @version    1.0.1
  * @author     Jesper Johansen <kontakt@jayj.dk>
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
