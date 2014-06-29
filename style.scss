@@ -140,6 +140,50 @@ tfoot td {
 	font-size: 1.1rem;
 }
 
+/* === WordPress Playlist === */
+
+.wp-playlist-tracks {
+	border: 1px solid $gray-light;
+	border-top-width: 0;
+}
+
+.wp-playlist-light {
+
+	.wp-playlist-item {
+		border-bottom: 1px solid $gray-light;
+
+		&:hover {
+			background: $content-highlight;
+			color: $link-color-hover;
+		}
+	}
+
+	.wp-playlist-item a:hover,
+	.wp-playlist-playing {
+		color: $link-color-hover;
+	}
+
+}
+
+.wp-playlist-dark {
+
+	.wp-playlist-item {
+		&, #main & a {
+			color: $gray-light;
+		}
+	}
+
+	.wp-playlist-item:hover {
+		background: rgba(#000, 0.3);
+	}
+
+	.wp-playlist-playing {
+		&, #main & a {
+			color: #fff;
+		}
+	}
+}
+
 /**
  * Images
  * --------------------------------------------------------------------------- */
