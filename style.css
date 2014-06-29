@@ -1,8 +1,8 @@
 /*!
  * Theme Name: Cycnus
  * Theme URI: http://jayj.dk/themes/cycnus
- * Description: A light child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds support for a custom background, and a better post pagination.
- * Version: 1.0.1
+ * Description: A light child theme for the <a href="http://wordpress.org/themes/socially-awkward">Socially Awkward</a> media theme. Besides the light colours, it adds support for a custom background.
+ * Version: 1.1.0
  * Author: Jesper Johansen
  * Author URI: http://jayj.dk
  * Template: socially-awkward
@@ -14,7 +14,7 @@
  * Libre Baskerville font
  * --------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6,
-.comment-author cite,
+.comment-author,
 .format-chat cite,
 dt {
   font-family: 'Libre Baskerville', 'Baskerville', 'Lora', serif;
@@ -25,11 +25,11 @@ dt {
 /**
  * Defaults
  * --------------------------------------------------------------------------- */
-/* === Layout === */
+/* === Body === */
 body {
+  padding-top: 0;
   border-top-color: rgba(0, 0, 0, 0.3);
   border-bottom-color: rgba(0, 0, 0, 0.4);
-  padding-top: 0;
   background: white;
 }
 
@@ -49,7 +49,8 @@ body {
 #respond textarea,
 #main a:hover, a:hover,
 .comment-content pre, pre,
-.comment-content th, .comment-content td,
+.comment-content th,
+.comment-content td,
 th, td,
 .wp-caption-text {
   opacity: 1;
@@ -117,6 +118,34 @@ tfoot td {
   font-size: 1.1rem;
 }
 
+/* === WordPress Playlist === */
+.wp-playlist-tracks {
+  border: 1px solid #cccccc;
+  border-top-width: 0;
+}
+
+.wp-playlist-light .wp-playlist-item {
+  border-bottom: 1px solid #cccccc;
+}
+.wp-playlist-light .wp-playlist-item:hover {
+  background: #ecf0f1;
+  color: #c0392b;
+}
+.wp-playlist-light .wp-playlist-item a:hover,
+.wp-playlist-light .wp-playlist-playing {
+  color: #c0392b;
+}
+
+.wp-playlist-dark .wp-playlist-item, #main .wp-playlist-dark .wp-playlist-item a {
+  color: #cccccc;
+}
+.wp-playlist-dark .wp-playlist-item:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+.wp-playlist-dark .wp-playlist-playing, #main .wp-playlist-dark .wp-playlist-playing a {
+  color: #fff;
+}
+
 /**
  * Images
  * --------------------------------------------------------------------------- */
@@ -164,7 +193,7 @@ img {
 /**
  * Main
  * --------------------------------------------------------------------------- */
-.hentry,
+.entry,
 .attachment-meta,
 #comments-template {
   border-top: 5px solid #202020;
@@ -173,15 +202,15 @@ img {
   border-bottom: 0;
   margin-bottom: 0;
 }
-.hentry:last-of-type,
+.entry:last-of-type,
 .attachment-meta:last-of-type,
 #comments-template:last-of-type {
   border-bottom: 5px solid #c0392b;
   margin-bottom: 50px;
 }
 
-.singular .hentry + #comments-template,
-.singular-attachment .hentry + .attachment-meta {
+.singular .entry + #comments-template,
+.singular-attachment .entry + .attachment-meta {
   border-top: 0;
   margin-top: -50px;
 }
@@ -195,9 +224,9 @@ img {
  * Content
  * --------------------------------------------------------------------------- */
 /* ====== Posts ====== */
-.hentry > .wp-caption,
-.hentry > img,
-.hentry > a img {
+.entry > .wp-caption,
+.entry > img,
+.entry > a img {
   margin-top: -10px;
 }
 
@@ -210,10 +239,10 @@ img {
 }
 
 /* Make the caption full width */
-.hentry > .wp-caption {
+.entry > .wp-caption {
   max-width: 100% !important;
 }
-.hentry > .wp-caption .wp-caption-text {
+.entry > .wp-caption .wp-caption-text {
   text-align: center;
 }
 
@@ -251,39 +280,45 @@ img {
 }
 
 /* === Post-related icons === */
-.entry-byline .permalink::before, .entry-byline .category::before, .entry-byline .portfolio::before, .entry-byline .post_tag::before, .entry-byline .author a::before,
-.entry-meta .permalink::before,
-.entry-meta .category::before,
-.entry-meta .portfolio::before,
-.entry-meta .post_tag::before,
-.entry-meta .author a::before {
+.entry-byline .entry-permalink::before,
+.entry-byline .category::before,
+.entry-byline .post_tag::before,
+.entry-byline .portfolio::before,
+.entry-byline .entry-author a::before,
+.entry-footer .entry-permalink::before,
+.entry-footer .category::before,
+.entry-footer .post_tag::before,
+.entry-footer .portfolio::before,
+.entry-footer .entry-author a::before {
   color: #858585;
 }
 
 .portfolio-item-link::before,
-.comments-link::before,
-.comment-meta .permalink::before,
+a.comments-link::before,
+.comment-meta .comment-permalink::before,
 .post-edit-link::before,
 .comment-edit-link::before,
-.published::before,
-.post-format-link::before {
+.entry-published::before,
+.comment-published::before,
+.post-format-link::before,
+.image-sizes::before {
   color: #858585;
 }
 
 /* ====== Formats Menu ====== */
-.page-template-formats .hentry {
+.page-template-formats .entry {
   padding-top: 50px;
   border-top: 5px solid #202020;
   border-bottom: 5px solid #c0392b;
   background: #ecf0f1;
 }
-.page-template-formats .hentry li a {
+.page-template-formats .entry li a {
   margin-bottom: 75px;
 }
-.page-template-formats .hentry li a::before {
+.page-template-formats .entry li a::before {
   transition-duration: 200ms;
 }
-.page-template-formats .hentry li a::after {
+.page-template-formats .entry li a::after {
   content: attr(title);
   position: absolute;
   bottom: -37px;
@@ -296,7 +331,7 @@ img {
   font-weight: 400;
   font-style: normal;
 }
-.page-template-formats .hentry li a:hover::after {
+.page-template-formats .entry li a:hover::after {
   color: #7e7e7e;
 }
 
@@ -365,32 +400,6 @@ img {
 
 .comments-nav .page-numbers {
   margin: 0 10px;
-}
-
-/* === Loop Pagination === */
-#main .loop-pagination {
-  margin: -50px auto 50px;
-  max-width: 900px;
-  text-align: center;
-  font-size: 1.125rem;
-}
-#main .loop-pagination .page-numbers {
-  background: #202020;
-  color: #fff;
-  display: inline-block;
-  padding: 5px 15px;
-  border: 1px solid #202020;
-  text-decoration: none;
-}
-#main .loop-pagination .page-numbers:hover {
-  background: black;
-  color: #cccccc;
-}
-#main .loop-pagination .current,
-#main .loop-pagination .current:hover {
-  border-color: #c0392b;
-  background: #c0392b;
-  color: #fff;
 }
 
 /**
