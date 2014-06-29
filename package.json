@@ -1,7 +1,7 @@
 {
   "name": "cycnus",
   "version": "1.0.1",
-  "description": "A light and bright child theme for the Socially Awkward media theme. Besides the light colours, it adds support for a custom background, and a better post pagination.",
+  "description": "A light and bright child theme for the Socially Awkward media theme. Besides the light colours, it adds support for a custom background.",
   "repository": {
     "type": "git",
     "url": "https://github.com/jayj/cycnus"
@@ -16,6 +16,7 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-compress": "~0.5.2",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-version": "~0.2.2"
+    "grunt-version": "~0.2.2",
+    "grunt-git": "~0.2.14"
   }
 }

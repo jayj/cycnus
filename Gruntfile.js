@@ -68,6 +68,25 @@ module.exports = function(grunt) {
 				src: [ 'functions.php' ],
 			}
 		},
+		// Commit and tag the new version
+		gitcommit: {
+			version: {
+				options: {
+					message: 'New version: ' + pkg.version
+				},
+				files: {
+					src: ['style.scss', 'style.css', 'package.json', 'functions.php']
+				}
+			}
+		},
+		gittag: {
+			version: {
+				options: {
+					tag: pkg.version,
+					message: 'Tagging version ' + pkg.version
+				}
+			}
+		},
 		// Compress the build folder into an upload-ready zip file
 		compress: {
 			build: {
@@ -85,7 +104,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'watch' ] );
 
 	// Pre-build task
-	grunt.registerTask( 'pre-build', [ 'version', 'sass' ]);
+	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version' ]);
 
 	// Build task
 	grunt.registerTask( 'build', [ 'clean:build', 'copy:build', 'cssmin:build', 'compress:build' ]);
