@@ -1,8 +1,8 @@
 # Cycnus
 
-A light and bright child theme for the [Socially Awkward](http://wordpress.org/themes/socially-awkward) media theme.
+A light child theme for the [Socially Awkward](http://wordpress.org/themes/socially-awkward) media theme.
  
-Besides the light colours, it adds the gorgeous Libre Baskerville font, support for a custom background, and a better post pagination.
+Besides the light colours, it adds the gorgeous Libre Baskerville font and support for a custom background.
 
 #### Screenshot and demo
 
