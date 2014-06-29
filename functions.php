@@ -25,9 +25,6 @@ function cycnus_child_theme_setup() {
 	/* Add theme support for custom backgrounds. */
 	add_theme_support( 'custom-background', array( 'default-color' => 'ffffff' ));
 
-	/* Add theme support for Loop Pagination. */
-	add_theme_support( 'loop-pagination' );
-
 	/* Filter the body class. */
 	add_filter( 'body_class', 'cycnus_body_class' );
 

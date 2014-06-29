@@ -413,30 +413,6 @@ img {
 	margin: 0 10px;
 }
 
-/* === Loop Pagination === */
-
-#main .loop-pagination {
-	margin: (-$main-gutter-width) auto $main-gutter-width;
-	max-width: 900px;
-	text-align: center;
-	font-size: 1.125rem;
-
-	.page-numbers {
-		@include button();
-		display: inline-block;
-		padding: 5px 15px;
-		border: 1px solid $gray-darker;
-		text-decoration: none;
-	}
-
-	.current,
-	.current:hover {
-		border-color: $red;
-		background: $red;
-		color: #fff;
-	}
-}
-
 /**
  * Comments Template
  * --------------------------------------------------------------------------- */
