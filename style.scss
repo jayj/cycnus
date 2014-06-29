@@ -28,7 +28,7 @@
  * --------------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6,
-.comment-author cite,
+.comment-author,
 .format-chat cite,
 dt {
 	font: {
@@ -42,12 +42,12 @@ dt {
  * Defaults
  * --------------------------------------------------------------------------- */
 
-/* === Layout === */
+/* === Body === */
 
 body {
+	padding-top: 0;
 	border-top-color: rgba( #000, 0.3 );
 	border-bottom-color: rgba( #000, 0.4 );
-	padding-top: 0;
 	background: $background-color;
 }
 
@@ -69,7 +69,8 @@ body {
 #respond textarea,
 #main a:hover, a:hover,
 .comment-content pre, pre,
-.comment-content th, .comment-content td,
+.comment-content th,
+.comment-content td,
 th, td,
 .wp-caption-text {
 	opacity: 1;
@@ -352,12 +353,14 @@ img {
 }
 
 .portfolio-item-link,
-.comments-link,
-.comment-meta .permalink,
+a.comments-link,
+.comment-meta .comment-permalink,
 .post-edit-link,
 .comment-edit-link,
-.published,
-.post-format-link {
+.entry-published,
+.comment-published,
+.post-format-link,
+.image-sizes {
 	&::before {
 		color: $icon-color-secondary;
 	}
@@ -366,7 +369,7 @@ img {
 /* ====== Formats Menu ====== */
 
 // Only applies when the template has page content
-.page-template-formats .hentry {
+.page-template-formats .entry {
 	padding-top: $main-gutter-width;
 	border-top: $main-border-top;
 	border-bottom: $main-border-bottom;
