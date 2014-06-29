@@ -237,7 +237,7 @@ img {
  * Main
  * --------------------------------------------------------------------------- */
 
-.hentry,
+.entry,
 .attachment-meta,
 #comments-template {
 	border-top: $main-border-top;
@@ -253,8 +253,8 @@ img {
 	}
 }
 
-.singular .hentry + #comments-template,
-.singular-attachment .hentry + .attachment-meta {
+.singular .entry + #comments-template,
+.singular-attachment .entry + .attachment-meta {
 	border-top: 0;
 	margin-top: ( -$main-gutter-width );
 }
@@ -270,7 +270,7 @@ img {
 
 /* ====== Posts ====== */
 
-.hentry {
+.entry {
 	> .wp-caption,
 	> img,
 	> a img {
@@ -288,7 +288,7 @@ img {
 }
 
 /* Make the caption full width */
-.hentry > .wp-caption {
+.entry > .wp-caption {
 	max-width: 100% !important;
 
 	.wp-caption-text {
@@ -339,8 +339,12 @@ img {
 /* === Post-related icons === */
 
 .entry-byline,
-.entry-meta {
-	.permalink, .category, .portfolio, .post_tag, .author a {
+.entry-footer {
+	.entry-permalink,
+	.category,
+	.post_tag,
+	.portfolio,
+	.entry-author a {
 		&::before {
 			color: $icon-color-secondary;
 		}
