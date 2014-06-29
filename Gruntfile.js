@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 		gitcommit: {
 			version: {
 				options: {
-					message: 'New version: ' + pkg.version
+					message: 'New version: <%= pkg.version %>'
 				},
 				files: {
 					src: ['style.scss', 'style.css', 'package.json', 'functions.php']
@@ -82,8 +82,8 @@ module.exports = function(grunt) {
 		gittag: {
 			version: {
 				options: {
-					tag: pkg.version,
-					message: 'Tagging version ' + pkg.version
+					tag: '<%= pkg.version %>',
+					message: 'Tagging version <%= pkg.version %>'
 				}
 			}
 		},
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'watch' ] );
 
 	// Pre-build task
-	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version' ]);
+	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version', 'gittag:version' ]);
 
 	// Build task
 	grunt.registerTask( 'build', [ 'clean:build', 'copy:build', 'cssmin:build', 'compress:build' ]);
