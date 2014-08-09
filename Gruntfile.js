@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 		},
 		// Minify style.css into style.min.css
 		cssmin: {
-			minify: {
+			build: {
 				expand: true,
 				src: ['*.css', '!*.min.css'],
 				dest: 'build/',
@@ -87,6 +87,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		gitpush: {
+			version: {
+				options: {
+					tags: true
+				}
+			}
+		}
 		// Compress the build folder into an upload-ready zip file
 		compress: {
 			build: {
@@ -104,7 +111,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'watch' ] );
 
 	// Pre-build task
-	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version', 'gittag:version' ]);
+	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version', 'gittag:version', 'gitpush:version' ]);
 
 	// Build task
 	grunt.registerTask( 'build', [ 'clean:build', 'copy:build', 'cssmin:build', 'compress:build' ]);
