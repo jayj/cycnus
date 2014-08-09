@@ -88,7 +88,8 @@ module.exports = function(grunt) {
 			}
 		},
 		gitpush: {
-			version: {
+			version: {},
+			tag: {
 				options: {
 					tags: true
 				}
@@ -111,7 +112,7 @@ module.exports = function(grunt) {
 	grunt.registerTask( 'default', [ 'watch' ] );
 
 	// Pre-build task
-	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version', 'gittag:version', 'gitpush:version' ]);
+	grunt.registerTask( 'pre-build', [ 'version', 'sass', 'gitcommit:version', 'gittag:version', 'gitpush:version', 'gitpush:tag' ]);
 
 	// Build task
 	grunt.registerTask( 'build', [ 'clean:build', 'copy:build', 'cssmin:build', 'compress:build' ]);
