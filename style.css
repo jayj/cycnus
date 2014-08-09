@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6,
 .comment-author,
 .format-chat cite,
 dt {
-  font-family: 'Libre Baskerville', 'Baskerville', 'Lora', serif;
+  font-family: 'Lora', 'Libre Baskerville', 'Baskerville', serif;
   font-weight: 700;
   font-style: normal;
 }

@@ -2,7 +2,7 @@
 
 A light child theme for the [Socially Awkward](http://wordpress.org/themes/socially-awkward) media theme.
  
-Besides the light colours, it adds the gorgeous Libre Baskerville font and support for a custom background.
+Besides the light colours, it changes the heading font and adds support for a custom background.
 
 #### Screenshot and demo
 

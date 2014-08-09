@@ -30,9 +30,6 @@ function cycnus_child_theme_setup() {
 
 	/* Register JS needed for the Theme Customizer. */
 	add_action( 'customize_preview_init', 'cycnus_customizer_live_preview' );
-
-	/* Register the Libre Baskerville font as a new heading font. */
-	add_action( 'theme_fonts_register', 'cycnus_register_font', 11 );
 }
 
 /**
@@ -68,53 +65,4 @@ function cycnus_customizer_live_preview() {
 		true
 	);
 
-}
-
-/**
- * Registers a new font for the headings
- *
- * @param  object $fonts
- * @return void
- */
-function cycnus_register_font( $fonts ) {
-
-	/* Libre Baskerville font family (normal, italic, bold). */
-	$fonts->add_font( array(
-		'handle' => 'libre-baskerville',
-		'family' => 'Libre Baskerville',
-		'type'   => 'google'
-	));
-
-	$fonts->add_font( array(
-		'handle' => 'libre-baskerville-italic',
-		'family' => 'Libre Baskerville',
-		'style'  => 'italic',
-		'type'   => 'google'
-	));
-
-	$fonts->add_font( array(
-		'handle' => 'libre-baskerville-bold',
-		'family' => 'Libre Baskerville',
-		'weight' => 700,
-		'type'   => 'google'
-	));
-
-	/* Add the font as a heading font in favor of Open Sans Condensed. */
-	$fonts->add_setting( array(
-		'id'        => 'headers',
-		'default'   => 'libre-baskerville',
-		'selectors' => array()
-	));
-
-	$fonts->add_setting( array(
-		'id'        => 'headers-bold',
-		'default'   => 'libre-baskerville-bold',
-		'selectors' => array()
-	));
-
-	$fonts->add_setting( array(
-		'id'        => 'headers-italic',
-		'default'   => 'libre-baskerville-italic',
-		'selectors' => array()
-	));
 }
