@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 					tags: true
 				}
 			}
-		}
+		},
 		// Compress the build folder into an upload-ready zip file
 		compress: {
 			build: {
